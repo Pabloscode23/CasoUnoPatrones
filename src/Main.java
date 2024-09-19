@@ -5,5 +5,8 @@ public class Main {
 
         Biblioteca biblioteca = new Biblioteca(new ArrayList<>(), new ArrayList<>());
         GestorDePrestamos gestor = new GestorDePrestamos();
+
+        Biblioteca biblioteca2 = new Biblioteca(new ArrayList<>(), new ArrayList<>());
+        GestorDePrestamos gestor2 = new GestorDePrestamos();
     }
 }
