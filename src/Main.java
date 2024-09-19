@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
-    static int opcion;
+
     static Biblioteca biblioteca = new Biblioteca();
 
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Main {
     }
 
     public static void menu() {
-
+         int opcion;
         do {
             System.out.println("MENU DE OPCIONES A EJECUTAR");
             System.out.println("1. Registrar usuario");
@@ -33,10 +33,11 @@ public class Main {
             System.out.println("5. Salir");
             System.out.println("Ingrese una opcion: ");
             opcion = Integer.parseInt(scan.nextLine());
+            accion(opcion);
         } while (opcion != 5);
     }
 
-    public static void accion() {
+    public static void accion(int opcion) {
         switch (opcion) {
             case 1:
                 System.out.println("Ingrese el nombre del usuario: ");
