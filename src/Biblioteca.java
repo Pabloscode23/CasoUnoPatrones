@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Biblioteca {
-    private ArrayList<Libro> libros;
-    private ArrayList<Usuario> usuarios;
+    private ArrayList<Libro> libros = new ArrayList<>();
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
 
     public Biblioteca() {
     }
@@ -44,15 +44,12 @@ public class Biblioteca {
     }
 
 
-    public void agregarLibro(String titulo, String autor, String ISBN, String estado) {
-        Libro l = new Libro(titulo, autor, ISBN, estado);
-        this.libros.add(l);
+    public void agregarLibro(Libro libro) {
+        libros.add(libro);
     }
 
-
-    public void registrarUsuario(String nombre, String identificacion) {
-        Usuario u = new Usuario(nombre, identificacion);
-        this.usuarios.add(u);
+    public void registrarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
     }
 
 
