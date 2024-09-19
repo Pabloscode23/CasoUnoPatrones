@@ -5,6 +5,7 @@ public class Main {
     static Scanner scan = new Scanner(System.in);
 
     static Biblioteca biblioteca = new Biblioteca();
+    static GestorDePrestamos gestor = new GestorDePrestamos(biblioteca);
 
     public static void main(String[] args) {
 
