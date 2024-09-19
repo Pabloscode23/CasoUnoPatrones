@@ -45,7 +45,8 @@ public class Main {
                 String nombre = scan.nextLine();
                 System.out.println("Ingrese la identificacion del usuario: ");
                 String identificacion = scan.nextLine();
-                biblioteca.registrarUsuario(new Usuario(nombre,identificacion));
+                biblioteca.registrarUsuario(new Usuario(identificacion, nombre));
+                System.out.println(biblioteca);
                 break;
 
             case 2:
@@ -56,6 +57,7 @@ public class Main {
                 System.out.println("Ingrese el ISBN del libro: ");
                 String ISBN = scan.nextLine();
                 biblioteca.agregarLibro(new Libro(titulo, autor, ISBN, "Disponible"));
+                System.out.println(biblioteca);
                 break;
 
             case 3:

@@ -11,7 +11,7 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.ISBN = ISBN;
-        this.estado = "disponible";
+        this.estado = "Disponible";
     }
 
     public String getTitulo() {
@@ -48,10 +48,6 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro{" +
-                "titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", estado='" + estado + '\'' + '}';
+        return "Titulo: " + titulo + " Autor: " + autor + " ISBN: " + ISBN + " Estado: " + estado;
     }
 }

@@ -27,7 +27,6 @@ public class Biblioteca {
         this.libros = libros;
     }
 
-
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -84,9 +83,26 @@ public class Biblioteca {
 
     @Override
     public String toString() {
-        return "Biblioteca{" +
-                "libros=" + libros +
-                ", usuarios=" + usuarios +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Biblioteca:\n");
+        sb.append("Libros:\n");
+        if (libros.isEmpty()) {
+            sb.append("  No hay libros en la biblioteca.\n");
+        } else {
+            for (Libro libro : libros) {
+                sb.append("  ").append(libro.toString()).append("\n");
+            }
+        }
+
+        sb.append("Usuarios:\n");
+        if (usuarios.isEmpty()) {
+            sb.append("  No hay usuarios registrados.\n");
+        } else {
+            for (Usuario usuario : usuarios) {
+                sb.append("  ").append(usuario.toString()).append("\n");
+            }
+        }
+
+        return sb.toString();
     }
 }
