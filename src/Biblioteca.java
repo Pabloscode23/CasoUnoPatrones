@@ -45,12 +45,41 @@ public class Biblioteca {
 
 
     public void agregarLibro(Libro libro) {
-        libros.add(libro);
+        if (buscarLibroPorISBN(libro.getISBN()) != null) {
+            System.out.println("Error: El libro con ISBN '" + libro.getISBN() + "' ya existe en la biblioteca.");
+        } else {
+            libros.add(libro);
+            System.out.println("El libro '" + libro.getTitulo() + "' ha sido agregado exitosamente.");
+        }
     }
 
     public void registrarUsuario(Usuario usuario) {
-        usuarios.add(usuario);
+            if (buscarUsuarioPorID(usuario.getIdentificacion()) != null) {
+                System.out.println("Error: El usuario con ID '" + usuario.getIdentificacion() + "' ya está registrado.");
+            } else {
+                usuarios.add(usuario);
+                System.out.println("El usuario '" + usuario.getNombre() + "' ha sido registrado exitosamente.");
+            }
+        }
+
+    public Libro buscarLibroPorISBN(String isbn) {
+        for (Libro libro : libros) {
+            if (libro.getISBN().equals(isbn)) {
+                return libro;
+            }
+        }
+        return null;
     }
+
+    public Usuario buscarUsuarioPorID(String id) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getIdentificacion().equals(id)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
 
 
     @Override

@@ -8,11 +8,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getIdentificación() {
+    public String getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificación(String identificación) {
+    public void setIdentificacion(String identificación) {
         this.identificacion = identificación;
     }
 
