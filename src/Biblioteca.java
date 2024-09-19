@@ -53,13 +53,13 @@ public class Biblioteca {
     }
 
     public void registrarUsuario(Usuario usuario) {
-            if (buscarUsuarioPorID(usuario.getIdentificacion()) != null) {
-                System.out.println("Error: El usuario con ID '" + usuario.getIdentificacion() + "' ya está registrado.");
-            } else {
-                usuarios.add(usuario);
-                System.out.println("El usuario '" + usuario.getNombre() + "' ha sido registrado exitosamente.");
-            }
+        if (buscarUsuarioPorID(usuario.getIdentificacion()) != null) {
+            System.out.println("Error: El usuario con ID '" + usuario.getIdentificacion() + "' ya está registrado.");
+        } else {
+            usuarios.add(usuario);
+            System.out.println("El usuario '" + usuario.getNombre() + "' ha sido registrado exitosamente.");
         }
+    }
 
     public Libro buscarLibroPorISBN(String isbn) {
         for (Libro libro : libros) {
@@ -78,7 +78,6 @@ public class Biblioteca {
         }
         return null;
     }
-
 
 
     @Override

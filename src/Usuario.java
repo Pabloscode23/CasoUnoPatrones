@@ -7,11 +7,9 @@ public class Usuario {
         this.identificacion = identificacion;
         this.nombre = nombre;
     }
-
     public String getIdentificacion() {
         return identificacion;
     }
-
     public void setIdentificacion(String identificación) {
         this.identificacion = identificación;
     }
@@ -26,5 +24,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "ID: " + identificacion + " Nombre: " + nombre;}
+        return "ID: " + identificacion + " Nombre: " + nombre;
+    }
 }
