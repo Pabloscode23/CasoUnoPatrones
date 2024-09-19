@@ -47,7 +47,13 @@ public class Main {
                 break;
 
             case 2:
-                //biblioteca.agregarLibro();
+                System.out.println("Ingrese el título del libro: ");
+                String titulo = scan.nextLine();
+                System.out.println("Ingrese el autor del libro: ");
+                String autor = scan.nextLine();
+                System.out.println("Ingrese el ISBN del libro: ");
+                String ISBN = scan.nextLine();
+                biblioteca.agregarLibro(new Libro(titulo, autor, ISBN, "Disponible"));
                 break;
 
             case 3:
@@ -71,4 +77,3 @@ public class Main {
 
 }
 
-}
