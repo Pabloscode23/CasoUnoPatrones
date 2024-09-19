@@ -65,7 +65,26 @@ public class Main {
                 break;
 
             case 4:
+            System.out.println("Ingrese la identificación del usuario que realiza la devolución: ");
+            String idUsuario = scan.nextLine();
+            Usuario usuario1 = biblioteca.buscarUsuarioPorID(idUsuario);
 
+            if (usuario1 == null) {
+                System.out.println("Error: Usuario no encontrado.");
+                break;
+            }
+
+            System.out.println("Ingrese el ISBN del libro a devolver: ");
+            String isbnLibroDev = scan.nextLine();
+            Libro libro1 = biblioteca.buscarLibroPorISBN(isbnLibroDev);
+
+            if (libro1 == null) {
+                System.out.println("Error: Libro no encontrado.");
+                break;
+            }
+
+            gestor.registrarDevolucion(usuario1, libro1);
+            System.out.println(biblioteca);
                 break;
 
 
@@ -78,6 +97,5 @@ public class Main {
                 break;
         }
     }
-
 }
 
