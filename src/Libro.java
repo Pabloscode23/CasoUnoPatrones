@@ -11,7 +11,7 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.ISBN = ISBN;
-        this.estado = estado;
+        this.estado = "disponible";
     }
 
     public String getTitulo() {

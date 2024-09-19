@@ -24,7 +24,7 @@ public class Main {
     }
 
     public static void menu() {
-         int opcion;
+        int opcion;
         do {
             System.out.println("MENU DE OPCIONES A EJECUTAR");
             System.out.println("1. Registrar usuario");
@@ -61,30 +61,49 @@ public class Main {
                 break;
 
             case 3:
+                System.out.println("Ingrese la identificación del usuario que realiza el prestamo: ");
+                String idUsuarioPrestamo = scan.nextLine();
+                Usuario usuarioPrestamo = biblioteca.buscarUsuarioPorID(idUsuarioPrestamo);
 
+                if (usuarioPrestamo == null) {
+                    System.out.println("Error: Usuario no encontrado.");
+                    break;
+                }
+
+                System.out.println("Ingrese el ISBN del libro que desea: ");
+                String isbnLibroPres = scan.nextLine();
+                Libro libroPres = biblioteca.buscarLibroPorISBN(isbnLibroPres);
+
+                if (libroPres == null) {
+                    System.out.println("Error: Libro no encontrado.");
+                    break;
+                }
+
+                gestor.realizarPrestamo(usuarioPrestamo, libroPres);
+                System.out.println(biblioteca);
                 break;
 
             case 4:
-            System.out.println("Ingrese la identificación del usuario que realiza la devolución: ");
-            String idUsuario = scan.nextLine();
-            Usuario usuario1 = biblioteca.buscarUsuarioPorID(idUsuario);
+                System.out.println("Ingrese la identificación del usuario que realiza la devolución: ");
+                String idUsuario = scan.nextLine();
+                Usuario usuario1 = biblioteca.buscarUsuarioPorID(idUsuario);
 
-            if (usuario1 == null) {
-                System.out.println("Error: Usuario no encontrado.");
-                break;
-            }
+                if (usuario1 == null) {
+                    System.out.println("Error: Usuario no encontrado.");
+                    break;
+                }
 
-            System.out.println("Ingrese el ISBN del libro a devolver: ");
-            String isbnLibroDev = scan.nextLine();
-            Libro libro1 = biblioteca.buscarLibroPorISBN(isbnLibroDev);
+                System.out.println("Ingrese el ISBN del libro a devolver: ");
+                String isbnLibroDev = scan.nextLine();
+                Libro libro1 = biblioteca.buscarLibroPorISBN(isbnLibroDev);
 
-            if (libro1 == null) {
-                System.out.println("Error: Libro no encontrado.");
-                break;
-            }
+                if (libro1 == null) {
+                    System.out.println("Error: Libro no encontrado.");
+                    break;
+                }
 
-            gestor.registrarDevolucion(usuario1, libro1);
-            System.out.println(biblioteca);
+                gestor.registrarDevolucion(usuario1, libro1);
+                System.out.println(biblioteca);
                 break;
 
 
